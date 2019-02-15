@@ -1,0 +1,94 @@
+%\documentstyle[12pt]{article}
+%
+\documentclass[12pt]{article}
+\usepackage{graphicx}
+\renewcommand{\theenumi}{\alph{enumi}}
+\begin{document}
+\begin{center}
+{\large\bf Log Likelihood Fitting
+}
+\end{center}
+\vskip0.2in
+Consider the problem of determining the lifetime of a species 
+of particle that we can stop in our detector
+by observing it decays in the presence of a constant background. The rate is
+given by
+$$
+R(t) = A + Be^{-\Gamma t}
+$$
+We'll take as the true parameters $A=1/$sec, $B=2/$sec, and $\Gamma=2/$sec.
+Each time we stop a particle in our detector, we will only wait to see
+if it decays for a maximum time $t_{max}=3$ seconds.
+We can imagine doing the experiment over many times (each experiment takes 
+three seconds) to accumulate a lot of data. 
+\begin{enumerate}
+\item First, let's generate some fake data. 
+We will generate this data using the Monte Carlo technique known 
+as the ``acceptance-rejection method'' or  ``rejection sampling.''
+Suppose you want to generate events whose distribution follows the
+function $f(x)$ (here $f(x)$ is the probability distribution function).
+This can be achieved by generating
+points $(x_i,y_i)$
+randomly in a two-dimensional space and keeping only the
+subset of the events where $y_i\le f(x_i)$.  A more detailed
+explaination of the method can be found here:
+\begin{flushleft}
+https://en.wikipedia.org/wiki/Rejection\_sampling
+\end{flushleft}
+We will generate fake data in the following way.  
+The maximum rate is at $t=0$, where it is $R_{max}=(A+B)$.  
+Pick an $x_i$, the time $t$ of the decay, randomly 
+between 0 and $t_{max}$, and pick $y_i$ randomly between 0 and $R_{max}$.
+Use $R(t)$  to you decide whether to keep this event.
+Generate a reasonable amount of such fake data.
+What percentage of the time do you
+expect to keep an event? Is that what you find?
+\item  Calculate the negative log-likelihood function, $-\ln {\cal L}$,
+for your data taking care to use a PDF normalized so
+$$
+\int_0^{t_{max}}f(t)dt=1
+$$
+Using this condition you can express your likelihood in terms of two 
+free parameters, $\Gamma$ and $\kappa=A/B$.  (Note:  you can
+see an example of how this works in the handout {\it Some
+Comments on Likelihood Functions} that is posted on our bCourses
+page).\\
+We will study the simulated data, pretending that we don't know what 
+values of $A$, $B$ and $\Gamma$ were used to generate it.  We want
+to determine $\Gamma$ from the data.
+Write code to calculate the negative log-likelihood:
+$$
+- \ln {\cal L} = - \sum_i \ln f(\kappa, \Gamma, t_i)
+$$
+where the $t_i$ are the time values you accepted in the Monte Carlo process.
+\item There are lots of algorithms for finding the 
+minimum of a non-linear function such as our negative log-likelihood, 
+but we won't bother to use any of
+these algorithms here.
+Instead, we will explore the minimum by inspecting the behavour of
+the function.
+Plot (or just show the values in a 2-dimensional grid) 
+the value of $-\ln {\cal L}$ you obtain from your simulated data
+as you vary $\kappa$ and $\Gamma$  
+in the region  of the true answer ($\kappa=0.5$, $\Gamma=2$).  
+How close is the $\Gamma $ that gives minimum negative
+log-likelihood  to the true value of $\Gamma$? 
+Now do the same,
+but with ten times as much simulated data. How close is the maximum now to
+the true value?
+\item  We saw in class that for high statistics $-2\ln {\cal L}$ is 
+distributed like a $\chi^2$ distribution and the uncertainty on
+the estimate of a parameter of the function can be obtained by finding how much
+the you can change the parameter to increase $-2\ln {\cal L}$ by
+1. 
+Assuming you know $\kappa$ exactly, plot  $-2\ln {\cal L}$ for
+values of $\Gamma$ around the maximum likelihood and indicate
+the uncertainty on the measured value of $\Gamma$.
+
+\noindent
+Try running your code with different numbers
+of events per pseudoexperiment and running many pseudoexperiments. 
+Is it true that 68\%\ of the time
+the true value lies within $\Delta {\cal L} = 1$? 
+\end{enumerate}
+\end{document}
