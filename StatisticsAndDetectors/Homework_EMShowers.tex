@@ -1,20 +1,14 @@
-\documentstyle[12pt]{article}
-
+\documentclass[12pt]{article}
+\usepackage{graphicx}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\textwidth}{1.0in}
 \begin{document}
 \begin{center}
 {\large\bf A Monte Carlo Model of Electromagnetic Showers
 }
 \end{center}
-\vskip0.2in
-
-
-In doing this problems, you will need to know certain physical constants (particle lifetimes,
-radiation lengths of specific materials, etc).  You can find everything
-you need on the Particle Data Group (PDG) web site:
-\begin{flushleft}
-  http://www-pdg.lbl.gov/
-  \end{flushleft}
-
+\vspace{0.2cm}
 In order to understand how their detectors respond, physicists
 use complex simulations.  These simulations take as their input Monte Carlo
 generated events, propagate the particles in these events through a model
@@ -28,10 +22,10 @@ In this problem, you will write your own Monte Carlo simulation of
 electromagnetic showers and use it to describe shower development in the
 CMS electromagnetic calorimeter (ECAL).  A description 
 of the CMS ECAL can be found at:
-\begin{flushleft}
+%\begin{flushleft}
 http://cms.web.cern.ch/news/electromagnetic-calorimeter
-\end{flushleft}
-
+%\end{flushleft}
+\noindent
 Write a Monte Carlo simulation that
 predicts the longitudinal development of an electromagnetic shower in
 the CMS ECAL.  The final ``answer'' should be a plot that looks 
@@ -40,7 +34,15 @@ the {\it Passage of Particles
 Through Matter}, but where the horizontal axis is the distance in cm
 from the front face of the calorimeter and the vertical axis is
 the average number of {\it charged} particles crossing a plane at 
-that distance.  
+that distance.
+A copy of the PDG plot is reproduced here:
+\begin{figure}[h]
+  \begin{center}
+\includegraphics[width=4.0in]{e30fe.png}
+  \end{center}
+\end{figure}
+
+\noindent
 To understand how the shower development depends on energy, make
 this plot for $E=1$ GeV and $E=10$ GeV electrons and compare
 the distance at which the maximum occurs. 
@@ -64,10 +66,11 @@ the emitted photons is peaked at low photon energy.
 While the true bremsstrahlung process is continuous, for this problem
 make the {\it unrealistic} approximation that the energy loss is a discrete process
 that occurs at random positions $x$ along the electron trajectory.
-In other words, the probability of a discrete bremmstahlung occuring in distance $dx$ is
-assumed to be 
+In other words, the number of electrons from an intial population of
+$N_0$ that survive without undergoing bremmstahlung
+after a distance $x$ is assumed to be 
 $$
-dP \equiv \frac{dN}{N} = - \frac{dx}{X_0}
+N = N_0 e^{-x/X_0}
 $$
 To simplify the calculation, also make the {\it unrealistic} assumption
 that whenever the bremsstahlung occurs the energy is divided equally
@@ -96,4 +99,8 @@ Also
 always share the
 energy of the photon equally.  Make the approximation that  the electron is massless.\\
 \end{itemize}
+In doing this problems, you will need to know certain physical constants (particle lifetimes,
+radiation lengths of specific materials, etc).  You can find everything
+you need on the Particle Data Group (PDG) web site:
+  http://www-pdg.lbl.gov/
 \end{document}

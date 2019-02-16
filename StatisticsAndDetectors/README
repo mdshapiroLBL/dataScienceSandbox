@@ -1,5 +1,43 @@
-# Notes for directory dataScienceSandbox/StatisticsAndDetectors
-# Author: Marjorie Shapiro
-# email: mdshapiro@lbl.gov
+#  README file for dataScienceSandbox/StatisticsAndDetectors
+#  This is a sandbox for problems and examples of general interest for the
+#  	upper division classes.
 #
-# Files:
+# Notes and examples
+# 	Notes_logLikelihood:
+#				This is a simple set of notes on logLikelihood
+#				fits together with an example.  I'm afraid my
+#				solution is in C++ but it would be easy to
+#				migrate to python.
+#
+#	Example_decay:
+#				This is a simple problem intended to provide an example
+#				of how to generate random numbers according to a specified
+#				distribution.  It should prepare them for the more complicated
+#				simulation problems in the homework.
+#
+# Problem Sets
+#	Homework_LogLikelihood:
+#				 This might be useful for 111 lab, since it is
+#				 so similar to muon decay.  I've given this
+#				 problem to my Physics 226 students as a way
+#				 of ensuring that the understand likelihood fits.
+#
+# 	Homework_DetectorResolution:
+#				Again, I've used this in Physics 226 but I think
+#				it would be useful in other contexts.  I would
+#				certainly add it to the Physics 129 options and
+#				it might also make sense for 111 lab.
+#				I've been wondering if there should be a second
+#				add-on problem which talks about track fitting.
+#				I'll try to put something together.
+#
+#	Homework_EMShowers:
+#				I'm interested in getting people's opinions on
+#				this problem.  It is both too hard and too simpified.
+#				The "too hard" part is that to do this, you need to
+#				have some programming skills.  The too simplified
+#				part is that the bremsstahlung and pair production
+#				modeling is wrong (I state that explicitly in the problem).
+#				Is this a bridge too far for upper division?  I use it in the grad
+#				class
+
