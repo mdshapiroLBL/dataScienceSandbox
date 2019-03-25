@@ -1,0 +1,70 @@
+\documentclass[12pt]{article}
+\usepackage{graphicx}
+\begin{document}
+\begin{center}
+  {\large\bf Parity Violation in Electron Scattering}
+\end{center}
+\vskip0.2in
+% Taken from Yury Kolmensky's Physics 129 Class
+Goals:
+\begin{itemize}
+\item Gain experience in data analysis using a data sample
+  from the E158 experiment at SLAC
+\item Introduce the concept of a parity violating asymmetry
+\item Explore strategies for correcting measurements for systematic
+  variations.
+  Use the measured correlations to translate between a "raw" (aka "measured") asymmetry and a "corrected"
+  (aka "true") asymmetry
+\item Learn how to determine confidence intervals for measured quantities
+\end{itemize}
+The E158  experiment at SLAC measured a parity-violating asymmetry in
+M\o ller (electron-electron) scattering. This was a fixed-target experiment,
+which scattered longitudinally-polarized electrons off atomic (unpolarized)
+electrons in a 1.5m liquid hydrogen target. The files provided
+here contain a
+snapshot of 10,000 "events" from this experiment (overall, the experiment
+collected almost 400 million such events over the course of about 4 months).
+Each event actually records a pair of pulses: one for the right-handed electron
+and one for the left-handed electron. For each event, 4 variables are recorded:
+\begin{itemize}
+    \item{\bf Counter:} A unique number labeling the event
+    \item{\bf Asym:} The "raw" cross section asymmetry from one of the
+      detector channels (there are 50 of these overall). The cross section
+      asymmetry is defined as
+      $$
+      A_{raw} = \frac{\sigma_R -\sigma_L}{\sigma_R +\sigma_L}
+      $$
+      The asymmtry is recorded in units of PPM (parts per million). It is
+      called "raw" because corrections due to the difference in beam properties
+      at the target are not yet applied (see below).
+    \item{$\bf \Delta X$:}  The beam position at the target in the $x$-direction
+      in microns (with the convention that the beam is traveling along Z).
+    \item{$\bf \Delta Y$:} The beam position at the target in the $y$-direction in microns 
+\end{itemize}
+The data sample is provided in internal ROOT format (asymdata.root)
+and in plain text format (asymdata.txt).
+You are free to use either to answer the questions below.
+\begin{enumerate}
+\item  Compute the mean of the raw asymmetry, Asym,
+  distribution and its statistical uncertainty.
+\item Compute the correlation coefficients: ${\rm Corr}(Asym,\Delta X)$,
+  ${\rm Corr}(Asym,\Delta Y)$, and ${\rm Corr}(\Delta X,\Delta Y)$.
+  Which variables are approximately independent of each other?
+\item A better estimator of the parity-violating asymmetry is the quantity that
+  corrects for possible differences in the right- and left-handed
+  electron pulses. We want to define a quantity
+  $$  A_{PV} = A_{raw} - a_x \Delta X - a_y \Delta Y $$
+  with coefficients $a_x$ and $a_y$ defined in such a way that
+  $A_{PV}$ is independent of $\Delta X$ and $\Delta Y$.
+  This is called a linear regression. For now, we will assume that $a_x$ is negligible (how good is this assumption?) and compute $a_y$. Compute $a_y$ and its
+  uncertainty using:
+   \begin{enumerate}
+   \item A binned least squares fit, using a profile histogram
+   \item An unbinned least squares fit
+   \end{enumerate}
+ \item Compute the mean of the regressed asymmetry distribution $A_{PV}$ and
+   its statistical uncertainty.
+\item Compute the 90\%\ confidence interval for the true value of $A_{PV}$
+\item Check the hypothesis that the distribution of $A_{PV}$ is Gaussian. For this, you can bin the distribuition of $A_{PV}$ in a reasonable number of bins (e.g. 100) and compute the goodness-of-fit (or p) value for the Gaussian distribution. Estimate the confidence level (or probability that the hypothesis is correct). 
+\end{enumerate}
+\end{document}
