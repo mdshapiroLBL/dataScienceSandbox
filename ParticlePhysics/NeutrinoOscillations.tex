@@ -1,0 +1,86 @@
+\documentclass[12pt]{article}
+\usepackage{graphicx}
+\begin{document}
+\begin{center}
+{\large\bf Neutrino Oscillations}
+\end{center}
+\vskip0.2in
+% Taken from Yury Kolmensky's Physics 129 Class
+Goals:
+\begin{itemize}
+\item Understand the phenomology of neutrino oscillations by
+  studying the expression of the mixing probability as a function
+  of distance from the neutrino production point.
+\item Learn how the best estimate of $\Delta m^2$ and its uncertainty
+can be obtained using a fit to experimental data.
+\end{itemize}
+Consider a system with two massive neutrinos,$\nu_e$ and $\nu_\mu$.
+An electron neutrino, $\nu_e$, created at time $t= 0$ in the core
+of the Sun, is described as a linear combination of two mass
+eigenstates $\nu_1$and $nu_2$:
+$$
+\left | \nu_e \right \rangle = \cos\theta \left | \nu_1 \right \rangle + \sin \theta  \left |\nu_2 \right \rangle
+$$
+where $\theta$ is a two-generation mixing angle.
+Similarly, the muon neutrino would be defined as the orthogonal
+linear combination:
+$$
+\left | \nu_\mu \right \rangle = -\sin\theta \left | \nu_1 \right \rangle +
+\cos \theta  \left |\nu_2 \right \rangle
+$$
+\begin{enumerate}
+\item[(a)] Show that the probability of finding a muon neutrino $\nu_mu$
+at a distance $L=t$ from the source is given by
+$$
+P_{\nu_e\rightarrow \nu_\mu}(t) = \sin^2\left (2\theta\right )
+\sin^2\left (\frac{\Delta m^2 L}{4E}\right )
+$$
+where $E\approx p >>m_1,m_2$ is the neutrino energy and
+$\Delta m^2 = {m^2}_1 - {m^2}_2$.
+\item[(b)] With $E$ measured in GeV, $L$ in km,and in $\Delta m^2$ eV$^2$,
+show that the previous formula can be re-written as
+$$
+P_{\nu_e\rightarrow \nu_\mu}(t) = \sin^2\left (2\theta \right )
+\sin^2 \left (\frac{1.27 \Delta m^2 L}{E} \right )
+$$
+This formula applies to any two-flavor neutrino mixing.
+\item[(c)] Super-Kamiokande (SuperK) experiment has analyzed
+the atmospheric ($\nu_e$ and $\nu_mu$) neutrino data and
+shown that they are consistent with
+two-flavor $\nu_\mu \rightarrow \nu_\tau $ oscillations with
+$\sin^2(2\theta)\sim1$ and $\Delta m^2\approx 10^{-3}$.
+They have also looked at the ratio of the number of
+$\nu_\mu$ events observed in data to the Monte Carlo prediction.
+The muon neutrinos were detected through the charge-current reaction
+emitting a muon. The approximate results are shown below.
+The distance from the production point to the detector was varied by
+observing the azimuthal dependence of the neutrino flux. Here,
+Monte Carlo  takes into account
+muon production in the atmosphere, energy-dependent efficiencies,
+etc, but assumes no oscillations.
+Thus, if neutrinos oscillate, the ratio of the yield
+in data to that in Monte Carlo should vary with distance
+according to the formula you derived above.
+\begin{center}
+  \begin{tabular}{|l|l|}
+    \hline
+  $L/E_\nu$ (km/GeV) & Data / Monte Carlo\\
+ \hline
+ 0.7& 1.00$\pm$0.20 \\
+20 & 1.00$\pm$0.08\\
+70 & 0.90$\pm$0.08\\
+200 & 0.83$\pm$0.15\\
+700& 0.65$\pm$0.15\\
+2000& 0.70$\pm$0.08\\
+7000& 0.63$\pm$0.06\\
+20000& 0.61$\pm$0.08\\
+\hline
+\end{tabular}
+\end{center}
+Make a plot of the results above with $L/E_\nu$ on the horizontal
+axis in log scale. At large $L/E_\nu$, the muon neutrinos have
+presumably undergone numerous oscillationsand have averaged out to
+roughly half the initial rate.  Using
+$\sin^2\left (2\theta \right ) = 1$, make an estimate of $\Delta m^2$.
+\end{enumerate}
+\end{document}
