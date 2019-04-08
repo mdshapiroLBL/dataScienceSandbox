@@ -1,0 +1,71 @@
+\documentclass[12pt]{article}
+\usepackage{graphicx}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\oddsidemargin}{-0.5in}
+\begin{document}
+\begin{center}
+{\large\bf Resonance Decays and Dalitz Plots}
+\end{center}
+\vskip0.2in
+% Taken from Yury Kolmensky's Physics 129 Class
+Goals:
+\begin{itemize}
+\item Gain experience in using the Particle Data Group compilations of decay rates to determine
+  relative branching fractions for different decay modes and to develop insight on decay kinematics.
+\item Using the example of $D_s^{+}\rightarrow K^+K^-\pi^{+}$, review how Dalitz Plots can be used to understand resonant structure in hadron decays.
+\end{itemize}
+B-factories are a good place to study the decays of bottom hadrons.  These $e^+e^-$
+colliders typically
+run at a center-of-mass energy of 10.579~GeV, the mass of the $\Upsilon (4s)$.  This
+$b\overline b $ resonance is just above open bottom threshold
+and therefore decays (more than 96\%\ of the time) to
+a $B\overline B$ (there is not enough additional energy to produce even a single additional pion).
+Consider the case $\Upsilon (4s)\rightarrow B^0\overline B^0$.  If the $\overline B^0$ is fully reconstructed,
+then we know that all the remaining particles must come from the decay of the $B^0$.  This sample
+can therefore be used to measure absolute branching fractions.
+\begin{enumerate}
+\item Consider the production $e^+e^- \rightarrow  B\overline B$ followed by the
+decay chain:
+\begin{eqnarray*}
+B^0 & \rightarrow & D_s^{*+}\pi^-\\
+D_s^{*+} & \rightarrow & D_s^+ \gamma\\
+D_s  & \rightarrow & K^+K^- \pi^+
+\end{eqnarray*}
+\begin{enumerate}
+\item For each of the particles listed above, use the Particle Data Group (PDG) tables to find their mass and spin. 
+\item Using the averages from the PDG, compare the branching fractions for  $D_s^{*+}\rightarrow D_s^+ \gamma$
+and $D^{*+}\rightarrow D_s^+ \gamma$.  Why are these so different?
+%\item Assuming that the $B^0$ is produced at rest in the lab frame, what is the momentum of the $D_S^{*+}$? in
+%the lab?
+\end{enumerate}
+\item The $D_s\rightarrow K^+K^-\pi$ decay can occur through several possible intermediate resonance states.
+In principle theses should be combined by adding their amplitudes since they can quantum mechanically
+interfer.  However, the resonant structure is still evident in the decay kinematics and it is possible
+to observe this structure using a Dalitz plot. The file  {\it DsstarPiMC.root} contains a simulated
+sample that corrresponds to the decay chain above.
+\begin{enumerate}
+\item Make the Dalitz plot for variables $m_{KK}^2$ and $m_{\pi K}^2$
+(combining the kaon and the pion of the opposite charge). Explain the structure.
+\item Compute the average invariant mass of the resonant structure in the $K^+K^-$ final state,
+and compare it to the mass of the $\phi$ meson in PDG. 
+\item Compute the average invariant mass of the resonant structure in the $K^-\pi^+$ final state,
+and compare it to the mass of the $K^*$ meson in PDG.  Check if the invariant mass you get is the same if you select a $K^+\pi^-$ final state.
+\item Using these data, compute the branching fractions for decays
+\begin{eqnarray*}
+D_s^+ &\rightarrow &  \phi \pi^+\\ 
+D_s^+ & \rightarrow &  \overline K^{*0}  K^+  
+\end{eqnarray*}
+as well as the nonresonant
+$$
+D_s+ \rightarrow K^+ K^- \pi^+
+$$
+and compare them to the values given in the PDG.
+\end{enumerate}
+\item Assuming that the $B^0$ is produced at rest in the lab frame, what is the momentum of the $D_S^{*+}$? in
+the lab frame?  Check this prediction using the simulated sample?
+\item Consider the decay $D_s^{*+} \rightarrow  D_s^+ \gamma$.  Do you expect the angular distribution of
+  this decay to be isotropic in the $D_s^{*+}$ rest frame?  You do not need to calculate the form of
+  the distribution but rather give a physical argument that supports your answer.
+\item Check using the simulated answer whether your prediction is correct.
+\end{enumerate}
+\end{document}
